@@ -31,3 +31,11 @@ Empirical tree distribution
 	</statistic>
 ```
 
+Operator for `currentTree`
+
+```
+		<empiricalTreeDistributionOperator weight="1">
+			<empiricalTreeDistributionModel idref="treeModel"/>
+		</empiricalTreeDistributionOperator>
+```
+

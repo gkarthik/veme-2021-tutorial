@@ -5119,6 +5119,9 @@
 		<bitFlipOperator weight="7">
 			<parameter idref="state.indicators"/>
 		</bitFlipOperator>
+		<empiricalTreeDistributionOperator weight="1">
+			<empiricalTreeDistributionModel idref="treeModel"/>
+		</empiricalTreeDistributionOperator>
 	</operators>
 
 
