@@ -8,6 +8,8 @@ This tutorial will cover,
 * Create XML to log Markov jump history.
 * Create XML to log Markov jump history using an empirical tree distribution.
 
+For this tutorial you can downlaod the BEAST jar files from [here](https://github.com/beast-dev/beast-mcmc/releases/download/v1.10.5pre1/BEAST.v1.10.5pre.zip).
+
 ### Useful XML snippets,
 
 
@@ -19,6 +21,26 @@ Complete history logger
 				<markovJumpsTreeLikelihood idref="host.treeLikelihood"/>				
 			</completeHistoryLogger>
 		</log>
+```
+
+For complete history logger you need to add `useUniformization=”true” numberOfSimulants=”1” saveCompleteHistory=”true”` to the `markovJumpsTreeLikelihood` block.
+
+```
+	<!-- Likelihood for tree given discrete trait data                           -->
+	<markovJumpsTreeLikelihood id="state.treeLikelihood" stateTagName="state.states" useUniformization="true" numberOfSimulants="1" saveCompleteHistory="true">
+		<attributePatterns idref="state.pattern"/>
+		<treeModel idref="treeModel"/>
+		<siteModel idref="state.siteModel"/>
+		<generalSubstitutionModel idref="state.model"/>
+		<generalSubstitutionModel idref="state.model"/>
+		<strictClockBranchRates idref="state.branchRates"/>
+
+		<!-- START Ancestral state reconstruction                                    -->
+		<!-- <parameter id="state.count" value=" 0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0"/> -->
+
+		<!-- END Ancestral state reconstruction                                      -->
+
+	</markovJumpsTreeLikelihood>
 ```
 
 Empirical tree distribution
