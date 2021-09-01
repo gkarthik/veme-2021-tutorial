@@ -4914,7 +4914,7 @@
 	<!-- 		<parameter id="treeModel.allInternalNodeHeights"/> -->
 	<!-- 	</nodeHeights> -->
 	<!-- </treeModel> -->
-	<empiricalTreeDistributionModel id="treeModel" fileName="batRABV.trees">
+	<empiricalTreeDistributionModel id="treeModel" fileName="batRABV_removeburnin.trees">
 		<taxa idref="taxa"/>
 	</empiricalTreeDistributionModel>
 	<statistic id="treeModel.currentTree" name="Current Tree">
