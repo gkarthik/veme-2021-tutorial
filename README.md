@@ -8,6 +8,8 @@ This tutorial will cover,
 * Create XML to log Markov jump history.
 * Create XML to log Markov jump history using an empirical tree distribution.
 
+For this tutorial you can downlaod the BEAST jar files from [here](https://github.com/beast-dev/beast-mcmc/releases/download/v1.10.5pre1/BEAST.v1.10.5pre.zip).
+
 ### Useful XML snippets,
 
 
