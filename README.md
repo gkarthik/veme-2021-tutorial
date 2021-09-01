@@ -23,6 +23,26 @@ Complete history logger
 		</log>
 ```
 
+For complete history logger you need to add `useUniformization=”true” numberOfSimulants=”1” saveCompleteHistory=”true”` to the `markovJumpsTreeLikelihood` block.
+
+```
+	<!-- Likelihood for tree given discrete trait data                           -->
+	<markovJumpsTreeLikelihood id="state.treeLikelihood" stateTagName="state.states" useUniformization="true" numberOfSimulants="1" saveCompleteHistory="true">
+		<attributePatterns idref="state.pattern"/>
+		<treeModel idref="treeModel"/>
+		<siteModel idref="state.siteModel"/>
+		<generalSubstitutionModel idref="state.model"/>
+		<generalSubstitutionModel idref="state.model"/>
+		<strictClockBranchRates idref="state.branchRates"/>
+
+		<!-- START Ancestral state reconstruction                                    -->
+		<!-- <parameter id="state.count" value=" 0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0"/> -->
+
+		<!-- END Ancestral state reconstruction                                      -->
+
+	</markovJumpsTreeLikelihood>
+```
+
 Empirical tree distribution
 ```
 	<empiricalTreeDistributionModel id="treeModel" fileName="batRABV.trees">
